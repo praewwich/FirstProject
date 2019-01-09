@@ -1,0 +1,308 @@
+<!doctype html>
+{% load staticfiles %}
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>:: Add- My Product ::</title>
+
+</head>
+<style>
+h2{
+	display: block;
+	color: #031c6b;
+	padding: 8px 16px;
+	text-decoration: none;
+	text-align: center;
+  }
+  li a.active {                       /* Color  menu */
+	background-color: rgb(34, 97, 148);
+	color: white;
+	text-align: center;
+  }
+  li a:hover:not(.active) {                               
+	background-color: rgb(207, 216, 223);
+	color: rgb(0, 0, 0);
+	text-align: center;
+  }
+  th {
+	  color:#2c3c6d;
+	  font-size: 20px;
+	  text-align: center;
+	  padding: 8px;
+		text-align: center;
+  }
+  td {
+	  color:#2c3c6d;
+	  text-align: center;
+	  padding: 8px;
+  }
+  tr {
+	  text-align: center;
+	  background-color:rgb(247, 247, 247);
+  }
+  table {se: collapse;             /* ความกว้าง table */
+	  width: 100%;
+  }
+  .tables {
+	border: none;
+	border-radius: 10px;
+	font-size: 16px;
+	text-align: center
+  }
+	.add {
+	margin: auto;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	background-color: rgb(101, 167, 221);
+	color:white;
+	padding: 18px;
+	font-size: 14px;
+	text-align: center;
+	display: inline-block;
+  }
+  .reset {  
+	margin: 0 auto;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	background-color:  rgb(101, 167, 221);
+	color:white;
+	padding: 18px;
+	font-size: 14px;
+	text-align: center;
+	display: inline-block;
+	}
+  .edit {
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	background-color:  rgb(101, 167, 221);
+	color:white;
+	padding: 8px;
+	font-size: 14px;
+	text-align: center;
+	display: inline-block;
+  }
+  .delete {
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	background-color:  rgb(101, 167, 221);
+	color:white;
+	padding: 8px;
+	font-size: 14px;
+	text-align: center;
+	display: inline-block;
+  }
+  .save {
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	background-color: rgb(101, 167, 221);
+	color: white;
+	padding: 8px;
+	font-size: 14px;
+	text-align: center;
+	display: inline-block;
+	}
+  .cancle {
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	background-color: rgb(101, 167, 221);
+	color: white;
+	padding: 8px;
+	font-size: 14px;
+	text-align: center;
+	display: inline-block;
+	}
+  input[type="text"],select {
+	width: 40%;
+	padding: 12px 20px;
+	display: inline-block;
+	border: 1px solid rgb(43, 65, 185);
+	border-radius: 4px;
+	margin-bottom: 10px;
+	background-color: white;
+  }
+  .dropbtn {  
+	background-color: rgb(101, 167, 221);
+	color: white;
+	padding: 16px;
+	font-size: 16px;
+	border: none;
+	cursor: pointer;
+  }
+											  /* header-styles */
+  #header {
+	  background-color: rgb(241, 246, 248);
+	  margin: 0;
+	  padding: 0;
+	  position: relative;
+	  width: 100%;
+  }
+  #header div {
+	  margin: 0 auto;
+	  max-width: 100%;
+	  overflow: hidden;
+	  padding: 10px 10px 10px;
+  }
+#cssmenu,
+#cssmenu ul,
+#cssmenu ul li,
+#cssmenu ul li a {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+  line-height: 1;
+  display: block;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#cssmenu:after,
+#cssmenu > ul:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+#cssmenu {         
+  border-bottom: 3px solid #7b93c0;
+  font-family: Raleway, sans-serif;
+  line-height: 1;
+}
+#cssmenu ul {
+  background: #d3dbe0;
+}
+#cssmenu > ul > li {
+  float: left;
+}
+#cssmenu.align-center > ul {
+  font-size: 0;
+  text-align: center;
+}
+#cssmenu.align-center > ul > li {
+  display: inline-block;
+  float: none;
+}
+#cssmenu.align-right > ul > li {
+  float: right;
+}
+#cssmenu.align-right > ul > li > a {
+  margin-right: 0;
+  margin-left: -4px;
+}
+#cssmenu > ul > li > a {
+  z-index: 2;
+  padding: 18px 25px 12px 25px;
+  font-size: 15px;
+  font-weight: 400;
+  text-decoration: none;
+  color: #090e3a;
+  -webkit-transition: all .2s ease;
+  -moz-transition: all .2s ease;
+  -ms-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+  margin-right: -4px;
+}
+#cssmenu > ul > li.active > a,
+#cssmenu > ul > li:hover > a,
+#cssmenu > ul > li > a:hover {
+  color: #ffffff;
+}
+#cssmenu > ul > li > a:after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  width: 100%;
+  height: 120%;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  content: "";
+  -webkit-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+  -webkit-transform: perspective(5px) rotateX(2deg);
+  -webkit-transform-origin: bottom;
+  -moz-transform: perspective(5px) rotateX(2deg);
+  -moz-transform-origin: bottom;
+  transform: perspective(5px) rotateX(2deg);
+  transform-origin: bottom;
+}
+#cssmenu > ul > li.active > a:after,
+#cssmenu > ul > li:hover > a:after,
+#cssmenu > ul > li > a:hover:after {
+  background: #4c6db3;
+}
+										  /* body-styles */
+  #body {
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	position: relative;
+	width: 100%;
+  }
+  #body div.footer div.sidebar {       /* slice bar  */ 
+	color: #fcfcfc;
+	background-color: #cbe9f1;
+	float: left;
+	margin: 0 10px 0 10px;
+	padding: 36px 0 34px;
+	width: 20%;
+  } 
+  #body div.footer div.article {    /* Blog  show */ 
+	color: #000852;
+	background-color: #bdd0d6;
+	float: center;
+	margin: 0 20px 0 20px;
+	padding: 5 10px 5 10px;
+	width: 95%;
+  }
+  #body div ul li {   /* Blog Menu */ 
+	float: left;
+	margin: 0 10px;
+	padding: 0;
+	width: 90%;
+  }
+</style>
+<body>
+	<div id="page">
+		<div id="header">
+			<div id='cssmenu'>
+				<ul>
+						<li class='active'><a href="{% url 'home' %}">Home</a></li>
+						<li><a href="{% url 'add' %}">Add Product</a></li>
+				</ul>
+				</div>
+		<div id="body">
+			<div class="header">	
+			</div>
+			<div class="body">
+			</div>
+		
+		<div class="article">
+					<h2>Add Product</h2>
+						<form method="POST" style="padding-left:30%">
+							{{ form.as_p }}
+							{% csrf_token %}
+							<a style="padding-left:20%" href="{% url 'home' %}" ><input class="save" type="submit" value="Save"></a>
+							<a style="padding-left:0%" href="{% url 'home' %}" ><input class="cancle" type="submit" value="Cancle"></a>
+						</form>
+				{% block content %}
+    {% endblock %}
+    </form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
